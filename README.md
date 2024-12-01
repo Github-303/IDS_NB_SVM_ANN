@@ -19,4 +19,4 @@ Phương pháp: NB, SVM, ANN
 
 Links: https://huggingface.co/spaces/KException/idstoolit3
 
-![1](Kết quả/Webtool_1.png)
+![1](/IDS_NB_SVM_ANN/Kết%20quả/Webtool_1.png)
