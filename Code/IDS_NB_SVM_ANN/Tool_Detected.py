@@ -87,13 +87,16 @@ def preprocess_test_data(df, models):
         }
 
         # Process labels
-        df['label'] = df['label'].str.rstrip('.')
+        df['label'] = df['label'].str.strip().str.rstrip('.')
         df['attack_category'] = df['label'].map(attack_dict)
 
         # Check for unmapped categories
         unmapped = df['label'][~df['label'].isin(attack_dict.keys())].unique()
         if len(unmapped) > 0:
             st.warning(f"Found unmapped attack types: {unmapped}")
+            # Map unmapped to their closest categories or 'unknown'
+            for attack in unmapped:
+                df.loc[df['label'] == attack, 'attack_category'] = attack_dict.get(attack.lower(), 'unknown')
 
         # Handle categorical features
         categorical_columns = ['protocol_type', 'service', 'flag']
@@ -116,9 +119,9 @@ def preprocess_test_data(df, models):
 
         # Clean data
         if 'attack_category' in df.columns:
-            mask = df['attack_category'] != 'unknown'
-            df = df[mask]
-            X = X[mask]
+            # mask = df['attack_category'] != 'unknown'
+            # df = df[mask]
+            # X = X[mask]
             
             mask_isna = ~df['attack_category'].isna()
             df = df[mask_isna]
@@ -430,8 +433,9 @@ def main():
                 })
                 
                 if 'label' in processed_df.columns:
-                    results_df['Actual'] = processed_df['label']
-                    accuracy = (results_df['Predicted'] == processed_df['label']).mean()
+                    # Thay vì dùng trực tiếp label, sử dụng attack_category đã được map
+                    results_df['Actual'] = processed_df['attack_category']
+                    accuracy = (results_df['Predicted'] == results_df['Actual']).mean()
                     st.metric("Model Accuracy", f"{accuracy:.2%}")
                 
                 # Display results
