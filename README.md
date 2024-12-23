@@ -108,10 +108,6 @@ def split_file(filename, chunk_size=190):
 Bạn cần giúp đỡ? Liên hệ ngay:
 - 📧 Email: Bit220084@st.cmcu.edu.vn
 
-## 📜 License
-
-MIT License - Xem chi tiết trong file [LICENSE](LICENSE)
-
 ---
 
 <div align="center">
