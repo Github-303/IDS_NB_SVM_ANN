@@ -41,7 +41,7 @@
 
 ```bash
 # Clone repo
-git clone https://github.com/your-username/ids-enterprise.git
+git clone https://github.com/Github-303/IDS_NB_SVM_ANN.git
 
 # Cài đặt dependencies
 pip install -r requirements.txt
@@ -52,7 +52,7 @@ python app.py
 
 ## 📊 Demo & Kết Quả
 
-![Web_demo](IDS_1.png)
+![Web_demo](https://github.com/Github-303/IDS_NB_SVM_ANN/blob/main/K%E1%BA%BFt%20qu%E1%BA%A3/Webtool_1.png)
 
 ## 🔧 Yêu Cầu Hệ Thống
 
