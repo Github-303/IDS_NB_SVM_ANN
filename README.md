@@ -22,7 +22,6 @@
 ### 1️⃣ Truy Cập Tool
 ```
 📌 https://huggingface.co/spaces/KException/idstoolit3
-![Web_demo](IDS_1.png)
 ```
 
 ### 2️⃣ Upload Dữ Liệu
@@ -53,10 +52,7 @@ python app.py
 
 ## 📊 Demo & Kết Quả
 
-<div align="center">
-  <img src="/api/placeholder/800/400" alt="Demo Results"/>
-  <p><i>Biểu đồ phân tích tấn công theo thời gian thực</i></p>
-</div>
+![Web_demo](IDS_1.png)
 
 ## 🔧 Yêu Cầu Hệ Thống
 
